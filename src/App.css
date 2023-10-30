@@ -9,6 +9,7 @@
 .container {
   width: 100vw;
   height: 100vh;
+  max-height: 100vh !important;
   background-color: rgb(0, 69, 101);
 }
 
@@ -74,7 +75,7 @@
 
 .containerBooks {
   width: 100%;
-  height: 100%;
+  height: 70%;
   display: flex;
   justify-content: center;
 }
@@ -90,9 +91,71 @@
 }
 
 .containerBooksIN {
-  width: 80%;
+  width: 50%;
   background-color: white;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.addContainer{
+  width: 24%;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: rgb(173, 255, 162);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.linkGroup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.addBook{
+  margin-top: 30px;
   height: 60%;
+  width: 50%;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+
+}
+
+.addBook label{
+  font-size: 12px;
+  margin-top: 10px;
+}
+.addBook input{
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  height: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding-left: 10px !important;;
+}
+
+.submitButton{
+  height: 30px;
+  margin-top: 10px;
+  background-color: rgb(51, 180, 51);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  animation: aparecer 2s;
 }
 
 @media (max-width: 620px) {
@@ -106,5 +169,14 @@
 
   .container {
     max-height: 100vh;
+  }
+}
+
+@keyframes aparecer {
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 100%;
   }
 }
