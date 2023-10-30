@@ -1,24 +1,42 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import { FiSearch } from 'react-icons/fi';
+import { BiBookBookmark } from 'react-icons/bi'
+
+
+
+
+// Rest of your code
 
 function App() {
-  return (<body>
-    <div className='container-fluid bg-dark h-100' id='bg'>
-      <nav className="navbar navbar-expand-lg navbar-primary w-100 bg-light p-4" id='navbar'>
-        <a className="navbar-brand" href="#">Banco de Livros</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Página Inicial</a>
-            </li>
-          </ul>
+  return (
+    <div className="container">
+      <nav>
+        <div className='navbar'>
+          <div className='groupL'>
+            <h2>Book's Bank</h2>
+            <BiBookBookmark size={25} color='#fff' />
+          </div>
+          <div className='navbarGroup'>
+            <input type="text" placeholder="Search Books" /><FiSearch size={25} color='#fff' id='search' />
+          </div>
+        </div>
+        <div className='navbar1'>
+          <button className='buttonNav inicio'>Adicionar livros</button>
+          <button className='buttonNav'>Consultar livros</button>
         </div>
       </nav>
+
+      <div className='containerBooks'>
+        <div className='containerBooksIN'>
+
+          <div>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
-  </body>
   );
 }
 
