@@ -12,7 +12,7 @@ function App() {
 
   const [abrirAddBook, setabrirAddBook] = useState('')
 
-  
+
 
   return (
     <div className="container">
@@ -36,7 +36,7 @@ function App() {
         <div className='containerBooksIN'>
 
           <div className='addContainer'>
-            <a className='linkGroup' onClick={()=>setabrirAddBook('aberto')}><span>Adicionar Livro </span><BiBookAdd size={30} color='#008000' /></a>
+            <a className='linkGroup' onClick={() => setabrirAddBook('aberto')}><span>Adicionar Livro </span><BiBookAdd size={30} color='#008000' /></a>
           </div>
 
           {Object.keys(abrirAddBook) != '' && (
