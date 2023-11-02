@@ -5,7 +5,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function Home() {
+function All_Books() {
   const [formData, setFormData] = useState({ title: "" });
   const [abrirAddBook, setAbrirAddBook] = useState(false);
   const [responseData, setResponseData] = useState(null);
@@ -40,6 +40,8 @@ function Home() {
         position: "top-right",
         autoClose: 3000, // Fecha o alerta automaticamente após 3 segundos
       });
+      // Atualiza a lista de livros após a criação bem-sucedida
+      fetchAllBooks();
     } catch (error) {
       // Lide com erros apropriadamente
       console.error(error);
@@ -55,45 +57,55 @@ function Home() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleDeleteBook = async (bookId) => {
+    try {
+      await axios.delete(`http://localhost:8080/delete/${bookId}`);
+      toast.success("Livro deletado com sucesso", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      // Atualiza a lista de livros após a exclusão bem-sucedida
+      fetchAllBooks();
+    } catch (error) {
+      console.error(error);
+      toast.error("Ocorreu um erro ao deletar o livro", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    }
+  };
+
   return (
-    <div className="container">
-    <div className="containerBooks">
-      <div className="containerBooksIN">
-        <div className="addContainer">
-          <a className="linkGroup" onClick={() => setAbrirAddBook(true)}>
-            <span>Adicionar Livro </span>
-            <BiBookAdd size={30} color="#008000" />
-          </a>
-        </div>
 
-        
 
-      
-      </div>
-      {abrirAddBook && (
-          <div className="addBook">
-            <h3 id="cadastrarBook">Cadastrar Livro</h3>
-
-            <form className="formzin" onSubmit={handleSubmit}>
-              <label>Nome do livro</label>
-              <input
-                type="text"
-                name="title"
-                id="searchB"
-                value={formData.title}
-                onChange={handleChange}
-                placeholder="Digite o título do livro"
-              />
-              <button id="ButtonS" type="submit">
-                Adicionar
-              </button>
-            </form>
+        <div className="containerBooksIN3">
+          <div className="bookList">
+            <table className="styled-table">
+              <thead>
+                <tr>
+                  <th>Título do Livro</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allBooks.map((book) => (
+                  <tr key={book.id}>
+                    <td>{book.title}</td>
+                    <td>
+                      <button onClick={() => handleDeleteBook(book.id)} id="button02">
+                        Excluir
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        )}
+
+
+      <ToastContainer /> {/* Container para exibir os alertas */}
     </div>
-    <ToastContainer /> {/* Container para exibir os alertas */}
-  </div>
   );
 }
 
-export default Home;
+export default All_Books;

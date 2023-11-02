@@ -85,9 +85,11 @@
 
 .containerBooks {
   width: 100%;
-  height: 70%;
+  height: 90%;
   display: flex;
-  justify-content: center;
+
+  flex-direction: column;
+  align-items: center;
 }
 
 .containerBooks2 {
@@ -96,6 +98,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#cadastrarBook{
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .groupL{
@@ -117,11 +124,13 @@
 }
 
 .containerBooksIN {
+  margin-top: 20px;
   width: 50%;
   background-color: white;
-  height: 80%;
+  height: 150px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -162,7 +171,7 @@
 
 .addBook{
   margin-top: 30px;
-  height: 60%;
+  height: 40%;
   width: 50%;
   background-color: blanchedalmond;
   display: flex;
@@ -205,6 +214,59 @@
   align-items: center;
   flex-direction: column;
 }
+
+.containerBooksIN3{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  max-width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#button02{
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
 
 #searchB{
   border: none;

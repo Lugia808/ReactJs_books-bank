@@ -9,6 +9,7 @@
   "author": "Naell Silva",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "handlebars": "^4.7.8"
   }
 }

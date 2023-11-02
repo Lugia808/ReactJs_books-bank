@@ -1,29 +1,30 @@
 import "../App.css";
-import { useState } from "react";
-import axios from 'axios'
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Consultar() {
-  const [formData, setFormData] = useState({
-    title: '',
-  });
+  const [formData, setFormData] = useState({ title: "" });
+  const [responseData, setResponseData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (event) => {
-    
-    //O axios não está enviando direito
-    try{
-        alert('try')
-        const response = await axios.get('https://localhost:8080/consultar', {params:formData});
-        console.log('Resposta da API: '+ response.data)
-        if(response){
-            alert(response)
-        }
-        alert('pegou?')
+  useEffect(() => {
+    // Esta função será acionada sempre que formData.title mudar
+    if (formData.title) {
+      setLoading(true);
+      axios
+        .get(`http://localhost:8080/consultar?title=${formData.title}`)
+        .then((response) => {
+          setResponseData(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setLoading(false);
+          console.error(error);
+        });
+    } else {
+      setResponseData([]);
     }
-    catch(error){
-        console.error('Erro ao enviar dados para a API: '+ error)
-    }
-
-  };
+  }, [formData.title]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,16 +37,42 @@ function Consultar() {
         <div className="containerBooksIN2">
           <div className="searchDiv">
             <label>Buscar Livro: </label>
-            <form className="formzin" onSubmit={handleSubmit}>
+            <form className="formzin">
               <input
                 type="text"
                 name="title"
                 id="searchB"
+                value={formData.title}
                 onChange={handleChange}
                 placeholder="Digite o título do livro"
               />
-              <button id="ButtonS">Buscar</button>
             </form>
+            <div>
+              {loading ? (
+                <p>Carregando resultados...</p>
+              ) : (
+                Array.isArray(responseData) && responseData.length > 0 ? (
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Título</th>
+                        {/* Adicione mais colunas aqui, se necessário */}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {responseData.map((item) => (
+                        <tr key={item.id}>
+                          <td>{item.title}</td>
+                          {/* Adicione mais colunas aqui, se necessário */}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                ) : (
+                  <p>Nenhum resultado encontrado.</p>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>

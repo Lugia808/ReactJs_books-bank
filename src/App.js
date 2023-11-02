@@ -3,6 +3,7 @@ import React, { Component } from "react"; // Change from Components to Component
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Consultar from "./components/Consultar"
+import All_Books from "./components/All_Books"
 
 import { useState } from "react";
 import "./App.css";
@@ -30,11 +31,13 @@ class App extends Component {
             <div className="navbar1">
               <button className="buttonNav inicio">Adicionar livros</button>
               <Link className="buttonNav" to='/consultar'>Consultar livros</Link>
+              <Link className="buttonNav" to='/allbooks'>All Books</Link>
             </div>
           </nav>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/consultar" element={<Consultar />} />
+            <Route exact path="/allbooks" element={<All_Books />} />
           </Routes>
       </Router>
     );
