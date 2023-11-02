@@ -8,6 +8,6 @@ const Books = sequelize.define('Books',{
     }
 })
 
-// Books.sync()
+//Books.sync()
 
 module.exports = Books

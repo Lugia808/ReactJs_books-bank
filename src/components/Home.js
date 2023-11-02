@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import '../App.css';
-import { FiSearch } from 'react-icons/fi';
 import { BiBookBookmark, BiBookAdd } from 'react-icons/bi'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 

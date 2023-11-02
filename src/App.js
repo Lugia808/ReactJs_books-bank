@@ -19,7 +19,7 @@ class App extends Component {
           <nav>
             <div className="navbar">
               <div className="groupL">
-                <h2>Book's Bank</h2>
+                <Link to={'/'} id="linkHome"><h2>Book's Bank</h2></Link>
                 <BiBookBookmark size={25} color="#fff" />
               </div>
               <div className="navbarGroup">
@@ -34,7 +34,7 @@ class App extends Component {
           </nav>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/consultar" element={<consultar/>} />
+            <Route exact path="/consultar" element={<Consultar />} />
           </Routes>
       </Router>
     );
