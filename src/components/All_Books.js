@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 function All_Books() {
   const [formData, setFormData] = useState({ title: "" });
-  const [abrirAddBook, setAbrirAddBook] = useState(false);
   const [responseData, setResponseData] = useState(null);
   const [allBooks, setAllBooks] = useState([]);
 
@@ -23,38 +22,6 @@ function All_Books() {
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const response = await axios.post(
-        "http://localhost:8080/create",
-        formData
-      );
-      console.log("Response:", response.data);
-      setResponseData(response.data);
-
-      toast.success(`${response.data.title} foi cadastrado com sucesso`, {
-        position: "top-right",
-        autoClose: 3000, // Fecha o alerta automaticamente após 3 segundos
-      });
-      // Atualiza a lista de livros após a criação bem-sucedida
-      fetchAllBooks();
-    } catch (error) {
-      // Lide com erros apropriadamente
-      console.error(error);
-      toast.error("Ocorreu um erro ao cadastrar o livro", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
   };
 
   const handleDeleteBook = async (bookId) => {

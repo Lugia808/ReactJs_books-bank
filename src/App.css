@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -82,7 +82,6 @@
   cursor: pointer;
 }
 
-
 .containerBooks {
   width: 100%;
   height: 90%;
@@ -100,27 +99,29 @@
   align-items: center;
 }
 
-#cadastrarBook{
+#cadastrarBook {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.groupL{
+.groupL {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.groupL h2{
+.groupL h2 {
   margin-right: 10px;
 }
 
-.formzin{
+.formzin {
   display: flex;
+  height: 25%;
+  background-color: #009879;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   align-items: center;
-
 }
 
 .containerBooksIN {
@@ -149,7 +150,7 @@
   align-items: center;
 }
 
-.addContainer{
+.addContainer {
   width: 24%;
   height: 40px;
   margin-top: 20px;
@@ -158,10 +159,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.linkGroup{
+.linkGroup {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,7 +169,7 @@
   cursor: pointer;
 }
 
-.addBook{
+.addBook {
   margin-top: 30px;
   height: 40%;
   width: 50%;
@@ -179,63 +179,83 @@
   flex-direction: column;
   padding: 20px;
   border-radius: 8px;
-
 }
 
-.addBook label{
+.addBook label {
   font-size: 12px;
   margin-top: 10px;
 }
-.addBook input{
+.addBook input {
   border: none;
   border-radius: 8px;
   padding: 8px;
   height: 25px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  padding-left: 10px !important;;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding-left: 10px !important;
 }
 
-.submitButton{
+.submitButton {
   height: 30px;
   margin-top: 10px;
   background-color: rgb(51, 180, 51);
   border: none;
   border-radius: 8px;
   color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   animation: aparecer 2s;
 }
 
-.searchDiv{
+.searchDiv {
   display: flex;
   width: 100%;
-  height: 30%;
-  justify-content: space-around;
+  height: 100%;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.containerBooksIN3{
+.searchDiv label{
+  margin-bottom: 5%;
+}
+#results{
+  margin-top: 15%;
+}
+
+.containerBooksIN3 {
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
 
-
+.bookList {
+  height: 100%;
+  max-width: 100vw;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
 
 .styled-table {
   width: 100%;
+  height: 50px;
   border-collapse: collapse;
   font-size: 0.9em;
   font-family: sans-serif;
   max-width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: solid black 2px;
 }
 
-#button02{
+#button02 {
   padding: 10px;
   border-radius: 8px;
   border: none;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    cursor: pointer;
 }
 
 .styled-table thead tr {
@@ -244,10 +264,9 @@
   text-align: left;
 }
 
-
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
@@ -267,17 +286,17 @@
   color: #009879;
 }
 
-
-#searchB{
+#searchB {
   border: none;
   width: 40%;
   height: 20px;
   border-radius: 8px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 8px;
 }
 
-#ButtonS{
+#ButtonS {
   margin-top: 15px;
   width: 40%;
   height: 35px;
@@ -285,7 +304,8 @@
   border: none;
   background-color: rgb(100, 100, 180);
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 @media (max-width: 620px) {
@@ -303,10 +323,10 @@
 }
 
 @keyframes aparecer {
-  from{
+  from {
     opacity: 0%;
   }
-  to{
+  to {
     opacity: 100%;
   }
 }

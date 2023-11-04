@@ -69,7 +69,7 @@ function Consultar() {
                     </tbody>
                   </table>
                 ) : (
-                  <p>Nenhum resultado encontrado.</p>
+                  <p id="results" >Nenhum resultado encontrado.</p>
                 )
               )}
             </div>

@@ -67,11 +67,12 @@ app.post("/create", async (req, res) => {
   }
 });
 
-app.post("/consultar", async (req, res) => {
-  const { title } = req.body; // Use req.body para acessar os dados do corpo da solicitação
-
+app.get("/consultar", async (req, res) => {
+  const { title } = req.query; // Use req.body para acessar os dados do corpo da solicitação
+  
   if (title) {
     Books.findAll({ where: { title: title } }).then((result) => {
+      console.log('chegou aqui')
       if (result.length > 0) {
         console.log("Um ou mais resultados foram encontrados:", result);
         res.status(200).send(result); // Envia os resultados como resposta JSON com status 200 (OK)
