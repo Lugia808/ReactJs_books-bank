@@ -86,7 +86,7 @@
   width: 100%;
   height: 90%;
   display: flex;
-
+  
   flex-direction: column;
   align-items: center;
 }
@@ -101,7 +101,10 @@
 
 #cadastrarBook {
   text-align: center;
-  margin-bottom: 30px;
+}
+
+.titleGP{
+  margin-bottom: 5%;
 }
 
 .groupL {
@@ -116,9 +119,10 @@
 
 .formzin {
   display: flex;
-  height: 25%;
+  height: 200px;
+  border-radius: 8px;
   background-color: #009879;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   width: 100%;
   align-items: center;
@@ -128,7 +132,7 @@
   margin-top: 20px;
   width: 50%;
   background-color: white;
-  height: 150px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +163,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
+
+.addContainer.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
 
 .linkGroup {
   display: flex;
@@ -170,8 +182,7 @@
 }
 
 .addBook {
-  margin-top: 30px;
-  height: 40%;
+  height: 70%;
   width: 50%;
   background-color: blanchedalmond;
   display: flex;
@@ -179,6 +190,7 @@
   flex-direction: column;
   padding: 20px;
   border-radius: 8px;
+  animation: aparecer 0.3s ease;
 }
 
 .addBook label {
@@ -297,12 +309,24 @@
 }
 
 #ButtonS {
-  margin-top: 15px;
-  width: 40%;
-  height: 35px;
+  width: 25%;
+  height: 30px;
   border-radius: 8px;
   border: none;
-  background-color: rgb(100, 100, 180);
+  background-color: rgb(140, 140, 231);
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+#ButtonS1{
+  width: 10%;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: rgb(140, 140, 231);
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
