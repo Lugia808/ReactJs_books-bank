@@ -30,7 +30,7 @@ class App extends Component {
             </div>
             <div className="navbar1">
               <button className="buttonNav inicio">Adicionar livros</button>
-              <Link className="buttonNav" to='/consultar'>Consultar livros</Link>
+
               <Link className="buttonNav" to='/allbooks'>All Books</Link>
             </div>
           </nav>

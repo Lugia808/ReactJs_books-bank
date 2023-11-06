@@ -58,6 +58,11 @@
   margin-right: 5px;
 }
 
+#inputzada {
+  padding: 6px;
+  margin-left: 5px;
+}
+
 #search {
   background-color: rgb(74, 74, 74);
   padding: 5px;
@@ -259,6 +264,11 @@
   font-family: sans-serif;
   max-width: 100%;
   border: solid black 2px;
+}
+
+#inlineTB{
+  display: flex;
+  flex-direction: row;
 }
 
 #button02 {

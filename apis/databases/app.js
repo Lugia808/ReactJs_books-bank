@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const handlebars = require("handlebars");
-const { sequelize } = require("./models/database");
+const { Sequelize, Op } = require('sequelize');
 const Books = require("./models/Books");
 const cors = require("cors");
 
@@ -38,17 +38,32 @@ app.delete("/delete/:id", async (req, res) => {
   }
 });
 
-
 app.get("/allbooks", async (req, res) => {
+  console.log(req.params.id)
+  const {id} = req.query
+  console.log(id)
   try {
-    const allBooks = await Books.findAll();
-    res.status(200).json(allBooks);
+    let resultados;
+    if(!id){
+
+      resultados = await Books.findAll()
+    }
+    else{
+      resultados = await Books.findAll({
+        where: {
+          title: {
+            [Op.like]: `${id}%`,
+          },
+        },
+      });
+    }
+
+    res.status(200).json(resultados);
   } catch (error) {
     console.error("Erro ao buscar todos os livros:", error);
     res.status(500).json({ error: "Erro ao buscar todos os livros" });
   }
 });
-
 
 app.post("/create", async (req, res) => {
   const { title } = req.body;
@@ -59,7 +74,7 @@ app.post("/create", async (req, res) => {
       console.log("Livro criado com sucesso:", newBook);
       res.status(201).json(newBook); // Retorna o livro criado como JSON com status 201 (Created)
     } catch (error) {
-      console.error('Erro ao criar o livro:', error);
+      console.error("Erro ao criar o livro:", error);
       res.status(500).json({ error: "Erro ao criar o livro" }); // Retorna um erro como JSON com status 500 (Internal Server Error)
     }
   } else {
@@ -69,27 +84,32 @@ app.post("/create", async (req, res) => {
 
 app.get("/consultar", async (req, res) => {
   const { title } = req.query; // Use req.body para acessar os dados do corpo da solicitação
-  
+
   if (title) {
-    Books.findAll({ where: { title: title } }).then((result) => {
-      console.log('chegou aqui')
-      if (result.length > 0) {
-        console.log("Um ou mais resultados foram encontrados:", result);
-        res.status(200).send(result); // Envia os resultados como resposta JSON com status 200 (OK)
-      } else {
-        console.log("Nada foi encontrado.");
-        res.status(404).send({ message: "Nada foi encontrado." }); // Envia uma mensagem de erro com status 404 (Not Found)
-      }
-    }).catch((error) => {
-      console.error('Erro ao consultar o banco de dados:', error);
-      res.status(500).send({ message: "Erro ao consultar o banco de dados." }); // Envia uma mensagem de erro com status 500 (Internal Server Error)
-    });
+    Books.findAll({ where: { title: title } })
+      .then((result) => {
+        console.log("chegou aqui");
+        if (result.length > 0) {
+          console.log("Um ou mais resultados foram encontrados:", result);
+          res.status(200).send(result); // Envia os resultados como resposta JSON com status 200 (OK)
+        } else {
+          console.log("Nada foi encontrado.");
+          res.status(404).send({ message: "Nada foi encontrado." }); // Envia uma mensagem de erro com status 404 (Not Found)
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao consultar o banco de dados:", error);
+        res
+          .status(500)
+          .send({ message: "Erro ao consultar o banco de dados." }); // Envia uma mensagem de erro com status 500 (Internal Server Error)
+      });
   } else {
     console.log("Parâmetros ausentes no corpo da solicitação.");
-    res.status(400).send({ message: "Parâmetros ausentes no corpo da solicitação." }); // Envia uma mensagem de erro com status 400 (Bad Request)
+    res
+      .status(400)
+      .send({ message: "Parâmetros ausentes no corpo da solicitação." }); // Envia uma mensagem de erro com status 400 (Bad Request)
   }
 });
-
 
 app.listen(8080, () => {
   console.log("servidor rodando na porta 8080");

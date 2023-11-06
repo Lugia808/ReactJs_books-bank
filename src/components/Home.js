@@ -80,8 +80,6 @@ function Home() {
             </div>
           )}
           {abrirAddBook && (
-
-            
             <div className="addBook">
               <button className="backButton" id="ButtonS1" onClick={handleBack}>
                 <IoIosArrowBack size={30} color="#0f0f0" /> 
