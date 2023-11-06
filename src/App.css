@@ -140,7 +140,6 @@
   height: 300px;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -160,8 +159,9 @@
 }
 
 .addContainer {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   width: 24%;
-  height: 40px;
+  height: 60px;
   margin-top: 20px;
   border-radius: 8px;
   background-color: rgb(173, 255, 162);
@@ -191,6 +191,7 @@
   width: 50%;
   background-color: blanchedalmond;
   display: flex;
+  margin-top: 3%;
   justify-content: center;
   flex-direction: column;
   padding: 20px;
