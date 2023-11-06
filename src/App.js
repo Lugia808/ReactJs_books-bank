@@ -17,28 +17,26 @@ class App extends Component {
       <Router>
 
 
-          <nav>
-            <div className="navbar">
-              <div className="groupL">
-                <Link to={'/'} id="linkHome"><h2>Book's Bank</h2></Link>
-                <BiBookBookmark size={25} color="#fff" />
-              </div>
-              <div className="navbarGroup">
-                <input type="text" placeholder="Search Books" />
-                <FiSearch size={25} color="#fff" id="search" />
-              </div>
+        <nav>
+          <div className="navbar">
+            <div className="groupL">
+              <Link to={'/'} id="linkHome"><h2>Book's Bank</h2></Link>
+              <BiBookBookmark size={25} color="#fff" />
             </div>
-            <div className="navbar1">
+            <div className="navbarGroup">
               <button className="buttonNav inicio">Adicionar livros</button>
 
               <Link className="buttonNav" to='/allbooks'>All Books</Link>
+              <input type="text" placeholder="Search Books" />
+              <FiSearch size={25} color="#fff" id="search" />
             </div>
-          </nav>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/consultar" element={<Consultar />} />
-            <Route exact path="/allbooks" element={<All_Books />} />
-          </Routes>
+          </div>
+        </nav>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/consultar" element={<Consultar />} />
+          <Route exact path="/allbooks" element={<All_Books />} />
+        </Routes>
       </Router>
     );
   }

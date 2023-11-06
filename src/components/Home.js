@@ -68,21 +68,21 @@ function Home() {
       <div className="containerBooks">
         <div className="containerBooksIN">
           {abrirAddBook ? (
-            <div style={{display:"none"}}>
+            <div style={{ display: "none" }}>
 
             </div>
           ) : (
             <div className="addContainer">
               <a className="linkGroup" onClick={toggleAddBook}>
                 <span>Adicionar Livro </span>
-                <BiBookAdd size={30} color="#008000" />
+                <BiBookAdd size={30} color="#ffff" />
               </a>
             </div>
           )}
           {abrirAddBook && (
             <div className="addBook">
               <button className="backButton" id="ButtonS1" onClick={handleBack}>
-                <IoIosArrowBack size={30} color="#0f0f0" /> 
+                <IoIosArrowBack size={30} color="#0f0f0" />
               </button>
 
               <div className="titleGP">
@@ -104,6 +104,7 @@ function Home() {
               </form>
             </div>
           )}
+          
         </div>
       </div>
       <ToastContainer />

@@ -73,6 +73,8 @@
   border: 0;
   margin: 15px;
   padding: 8px;
+  color: white;
+  text-decoration: none;
   border-radius: 2px;
   background-color: transparent;
   font-size: 16px;
@@ -134,15 +136,16 @@
 }
 
 .containerBooksIN {
-  margin-top: 20px;
-  width: 50%;
+  width: 100%;
   background-color: white;
-  height: 300px;
+  height: 500px;
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: end;
   flex-direction: column;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-image: url(https://images.alphacoders.com/132/1326370.png);
 }
 
 .containerBooksIN2 {
@@ -160,15 +163,16 @@
 
 .addContainer {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  width: 24%;
+  width: 20%;
   height: 60px;
   margin-top: 20px;
   border-radius: 8px;
-  background-color: rgb(173, 255, 162);
+  background-color: #236170;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-left: 100px;
+  margin-bottom: 70px;
 }
 
 .addContainer.hidden {
@@ -177,18 +181,22 @@
   display: none;
 }
 
+body{
+  background-color: rgb(0, 69, 101);
+}
 
 .linkGroup {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  color: white;
   cursor: pointer;
 }
 
 .addBook {
   height: 70%;
-  width: 50%;
+  width: 40%;
   background-color: blanchedalmond;
   display: flex;
   margin-top: 3%;
@@ -282,7 +290,7 @@
 }
 
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: #0C0C40;
   color: #ffffff;
   text-align: left;
 }
@@ -290,6 +298,10 @@
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
+}
+
+table{
+  background-color: rgb(187, 187, 187);
 }
 
 .styled-table tbody tr {
