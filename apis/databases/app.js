@@ -40,21 +40,24 @@ app.delete("/delete/:id", async (req, res) => {
 
 app.get("/allbooks", async (req, res) => {
   console.log(req.params.id)
-  const {id} = req.query
+  const { id } = req.query
   console.log(id)
   try {
     let resultados;
-    if(!id){
+    if (!id) {
 
-      resultados = await Books.findAll()
+      resultados = await Books.findAll({
+        order: [['title', 'ASC']] // Alterado para ordem crescente (ASC)
+      })
     }
-    else{
+    else {
       resultados = await Books.findAll({
         where: {
           title: {
             [Op.like]: `${id}%`,
           },
-        },
+
+        }, order: [['title', 'ASC']] // Alterado para ordem crescente (ASC)
       });
     }
 
@@ -65,12 +68,40 @@ app.get("/allbooks", async (req, res) => {
   }
 });
 
+app.get('/lista_de_leitura', async (req, res) => {
+  const { id } = req.query;
+
+  try {
+    const book = await Books.findByPk(id);
+    console.log(book.dataValues.status)
+
+    if (!book) {
+      return res.status(404).json({ error: "Livro não encontrado" });
+    }
+
+    // Verifica o status atual e alterna entre "N_Lido" e "lido"
+    if (book.dataValues.status === "N_Lido") {
+      await book.update({ status: "lido" });
+      res.status(200).json({ message: "Status atualizado com sucesso (lido)" });
+    } else if (book.dataValues.status === "lido") {
+      await book.update({ status: "N_Lido" });
+      res.status(200).json({ message: "Status atualizado com sucesso (não lido)" });
+    }
+
+
+  } catch (error) {
+    console.error("Erro ao atualizar o status do livro:", error);
+    res.status(500).json({ error: "Erro ao atualizar o status do livro" });
+  }
+});
+
+
 app.post("/create", async (req, res) => {
   const { title } = req.body;
 
   if (title) {
     try {
-      const newBook = await Books.create({ title });
+      const newBook = await Books.create({ title: title, status: 'N_Lido' });
       console.log("Livro criado com sucesso:", newBook);
       res.status(201).json(newBook); // Retorna o livro criado como JSON com status 201 (Created)
     } catch (error) {

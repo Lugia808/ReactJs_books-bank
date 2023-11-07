@@ -80,6 +80,23 @@
   font-size: 16px;
 }
 
+.buttonNav1 {
+  border: 0;
+  margin: 0px;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  border-radius: 2px;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.lido {
+  background-color: rgba(58, 255, 36, 0.621) !important;
+  color: white; /* Define uma cor de texto legível */
+}
+
+
 .inicio {
   margin-left: 30px;
 }
@@ -89,6 +106,11 @@
   cursor: pointer;
 }
 
+
+.buttonNav1:hover {
+  background-color: rgb(60, 170, 234, 0.8);
+  cursor: pointer;
+}
 .containerBooks {
   width: 100%;
   height: 90%;
@@ -128,9 +150,9 @@
   display: flex;
   height: 200px;
   border-radius: 8px;
-  background-color: #009879;
-  justify-content: space-around;
-  flex-direction: column;
+  background-color: #143658;
+  justify-content: center;
+  flex-direction: row;
   width: 100%;
   align-items: center;
 }
@@ -138,7 +160,7 @@
 .containerBooksIN {
   width: 100%;
   background-color: white;
-  height: 500px;
+  height: 480px;
   display: flex;
   align-items: start;
   justify-content: end;
@@ -172,17 +194,21 @@
   justify-content: center;
   align-items: center;
   margin-left: 100px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
-.addContainer.hidden {
-  opacity: 0;
-  pointer-events: none;
-  display: none;
+
+
+
+.containerAdd{
+  display: flex;
+  justify-content: center;
 }
 
-body{
-  background-color: rgb(0, 69, 101);
+body .container{
+  background: rgb(60,60,60);
+  background: linear-gradient(0deg, rgba(60,60,60,1) 0%, rgba(0,0,0,1) 100%);
+  height: 92.3vh !important;
 }
 
 .linkGroup {
@@ -195,9 +221,9 @@ body{
 }
 
 .addBook {
-  height: 70%;
+  height: 50%;
   width: 40%;
-  background-color: blanchedalmond;
+  background-color: rgb(125, 127, 150);
   display: flex;
   margin-top: 3%;
   justify-content: center;
@@ -321,10 +347,15 @@ table{
   color: #009879;
 }
 
+#linkAdd{
+  text-decoration: none;
+  color: white;
+}
+
 #searchB {
   border: none;
-  width: 40%;
-  height: 20px;
+  width: 60%;
+  height: 30px;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -332,8 +363,9 @@ table{
 }
 
 #ButtonS {
-  width: 25%;
-  height: 30px;
+  width: 7%;
+  margin-left: 5px;
+  height: 45px;
   border-radius: 8px;
   border: none;
   background-color: rgb(140, 140, 231);

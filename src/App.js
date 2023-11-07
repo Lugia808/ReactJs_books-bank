@@ -2,13 +2,12 @@ import "./App.css";
 import React, { Component } from "react"; // Change from Components to Component
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
-import Consultar from "./components/Consultar"
+import AddBooks from "./components/addBooks"
 import All_Books from "./components/All_Books"
-
-import { useState } from "react";
+import Status from "./components/Status"
 import "./App.css";
 import { FiSearch } from "react-icons/fi";
-import { BiBookBookmark, BiBookAdd } from "react-icons/bi";
+import { BiBookBookmark } from "react-icons/bi";
 
 class App extends Component {
   // Change from "app" to "App"
@@ -24,7 +23,8 @@ class App extends Component {
               <BiBookBookmark size={25} color="#fff" />
             </div>
             <div className="navbarGroup">
-              <button className="buttonNav inicio">Adicionar livros</button>
+              <Link className="buttonNav1" to={"/lista_de_leitura"} >Lista de Leitura</Link>
+              <a href="/addbooks" ><button className="buttonNav inicio">Adicionar livros</button></a>
 
               <Link className="buttonNav" to='/allbooks'>All Books</Link>
               <input type="text" placeholder="Search Books" />
@@ -34,8 +34,9 @@ class App extends Component {
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/consultar" element={<Consultar />} />
+          <Route exact path="/addbooks" element={<AddBooks />} />
           <Route exact path="/allbooks" element={<All_Books />} />
+          <Route exact path="/lista_de_leitura" element={<Status />} />
         </Routes>
       </Router>
     );

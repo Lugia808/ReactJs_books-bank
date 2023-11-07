@@ -4,6 +4,7 @@ import { FiSearch } from "react-icons/fi";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AiFillDelete } from "react-icons/ai"
 
 function All_Books() {
   const [formData, setFormData] = useState({ title: "" });
@@ -91,7 +92,7 @@ function All_Books() {
                     onClick={() => handleDeleteBook(book.id)}
                     id="button02"
                   >
-                    Excluir
+                    <AiFillDelete size={25} color="#ff4555" />
                   </button>
                 </td>
               </tr>
