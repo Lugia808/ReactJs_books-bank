@@ -389,17 +389,99 @@ table{
 
 @media (max-width: 620px) {
   .navbar {
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(12, 12, 64);
+    justify-content: space-between;
   }
-
-  .navbar h2 {
-    margin: 0 !important;
+  
+  .buttonNav1,
+  .buttonNav {
+    border: 0;
+    margin: 15px;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+    background-color: transparent;
+    font-size: 16px;
   }
+  
+  /* Estilos para dispositivos móveis (max-width: 600px) */
+  @media only screen and (max-width: 600px) {
+#search{
+  display: none;
+}
 
+    #divInp{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar {
+      height: auto;
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .navbar h2 {
+      margin: 0;
+    }
+  
+    .groupL {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbarGroup {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .buttonNav1,
+    .buttonNav {
+      margin: 10px;
+    }
   .container {
     max-height: 100vh;
   }
 }
+
+/* Estilos para o ícone de barras */
+.dropdown-icon {
+  display: block; /* Show the icon */
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+/* Estilos para o mobile dropdown */
+.mobile-dropdown {
+  display: none;
+  flex-direction: column;
+  background-color: rgb(12, 12, 64);
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  transition: display 0.3s;
+}
+
+.mobile-dropdown button:hover{
+  background-color: #236170;
+}
+
+.mobile-dropdown.open {
+  display: flex; /* Show the dropdown when isDropdownOpen is true */
+}
+
 
 @keyframes aparecer {
   from {
@@ -409,3 +491,36 @@ table{
     opacity: 100%;
   }
 }
+
+@media only screen and (max-width: 600px)
+ {
+  .containerBooksIN {
+    width: 100%;
+    background-color: white;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-image: url(https://images.alphacoders.com/132/1326370.png);
+  }
+  .addContainer {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 50%;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #236170;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  #linkHome{
+    display: none;
+  }
+}
+}
+
