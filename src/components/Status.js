@@ -8,6 +8,7 @@ import { AiFillDelete } from "react-icons/ai"
 
 function Status() {
   const [allBooks, setAllBooks] = useState([]);
+  const [bookInput, setBookInput] = useState('')
 
   useEffect(() => {
     // Buscar todos os livros ao montar o componente
@@ -80,6 +81,7 @@ function Status() {
 
   const handleChange = async (e) => {
     const { value } = e.target;
+    setBookInput(value)
     fetchAllBooks(value);
   };
 
@@ -94,6 +96,8 @@ function Status() {
               <input
                 id="inputzada"
                 onChangeCapture={handleChange}
+                value={bookInput}
+                name="book"
                 placeholder="Buscar por algum livro"
               />
             </th>

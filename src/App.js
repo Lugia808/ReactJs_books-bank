@@ -56,10 +56,10 @@ class App extends Component {
                 }`}
               >
                 <Link className="buttonNav1" to={"/lista_de_leitura"}>
-                <button class="buttonNav inicio">Lista de Leitura</button>
+                  <button class="buttonNav inicio">Lista de Leitura</button>
                 </Link>
                 <Link className="buttonNav" to="/allbooks">
-                <button class="buttonNav inicio">All Books</button>
+                  <button class="buttonNav inicio">All Books</button>
                 </Link>
                 <Link to="/addbooks">
                   <button className="buttonNav inicio">Adicionar livros</button>
@@ -68,10 +68,10 @@ class App extends Component {
               <div id="divInp">
                 <input type="text" placeholder="Search Books" />
                 <FiSearch size={25} color="#fff" id="search" />
-                <button onClick={this.toggleDropdown}>
+              </div>
+              <button id="buttonZ" onClick={this.toggleDropdown}>
                   <FiMenu size={25} />
                 </button>
-              </div>
             </div>
           </div>
         </nav>
